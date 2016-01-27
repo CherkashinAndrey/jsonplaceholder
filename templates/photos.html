@@ -1,0 +1,26 @@
+<table class="tableInfo" ng-repeat="el in jsonData">
+  <thead>
+    <tr>
+       <th>albumId: {{el.albumId}}</th>
+       <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+       <td><img src="{{el.thumbnailUrl}}" href="#" alt=""></td>
+       <td></td>
+    </tr>  
+    <tr>
+       <td>id:</td>
+       <td>{{el.id}}</td>
+    </tr>
+    <tr>
+       <td>title:</td>
+       <td>{{el.title}}</td>
+    </tr>
+    <tr>
+       <td>url:</td>
+       <td><a href="{{el.url}}">{{el.url}}</a></td>
+    </tr>
+  </tbody>
+</table>
