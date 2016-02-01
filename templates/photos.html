@@ -1,4 +1,43 @@
-<table class="tableInfo" ng-repeat="el in jsonData">
+<div class="wrapper">
+  <div class="row" >
+    <div class="col-sm-10 col-md-4 " ng-repeat="photo in photos" >
+      <div class="thumbnail">
+      <img src="{{photo.thumbnailUrl}}" alt="">
+        <div class="caption" >
+          <h3>{{photo.name}}</h3>
+              <ul >  
+                  <li><strong> title: </strong> {{photo.title}} </li>
+                  <li><strong> img(600x600): </strong>  <a href="{{photo.url}}">{{photo.url}}</a> </span></li>
+              </ul>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<div class="wrapper" >
+  <div class="row" ng-repeat="el in jsonData">
+    <div class="col-sm-6 col-md-4 " >
+      <div class="thumbnail">
+      <img src="{{el.thumbnailUrl}}" alt="">
+        <div class="caption" >
+          <h3>изменить запрос на 2{{el.albumId}}</h3>
+              <ul >  
+                  <li><strong> title: </strong> {{el.title}} </li>
+                  <li><strong> img(600x600): </strong>  <a href="{{el.url}}">{{el.url}}</a> </span></li>
+              </ul>
+          <p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <table class="tableInfo" ng-repeat="el in jsonData">
   <thead>
     <tr>
        <th>albumId: {{el.albumId}}</th>
@@ -23,4 +62,4 @@
        <td><a href="{{el.url}}">{{el.url}}</a></td>
     </tr>
   </tbody>
-</table>
+</table> -->

@@ -1,3 +1,21 @@
+<div class="wrapper" >
+  <div class="row" ng-repeat="comment in comments">
+    <div class="col-sm-6 col-md-12 " >
+      <div class="thumbnail">
+        <div class="caption" >
+          <h3>изменить comments{{comment.postId}}</h3>
+              <ul >  
+                  <li><strong> name: </strong> {{comment.name}} </li>
+                  <li><strong> email: </strong> {{comment.email}} </li>
+                  <li><strong> body: </strong>  {{comment.body}} </span></li>
+              </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
 <table class="tableInfo" ng-repeat="el in jsonData">
   <thead>
     <tr>
@@ -23,4 +41,4 @@
        <td>{{el.body}}</td>
     </tr>
   </tbody>
-</table>
+</table> -->

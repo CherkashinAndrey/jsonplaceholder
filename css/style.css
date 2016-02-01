@@ -1,20 +1,93 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, menu,
+nav, output, ruby, section, summary, time, mark, audio, video {
+ margin:0;
+ padding:0;
+ border:0;
+ font-size:100%;
+ font:inherit;
+ vertical-align:baseline;
+}
+article, aside, details, figcaption, figure, footer, header, nav, section {
+ display:block;
+}
+ol, ul {
+ list-style:none;
+}
+blockquote, q {
+ quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+ content:'';
+ content:none;
+}
+table {
+ border-collapse:collapse;
+ border-spacing:0;
+}
+
+body {
+background: #ffffff;
+color: #000000;
+font-family: Trebuchet MS, Arial, Times New Roman;
+font-size: 12px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 1000px; 
+}
+
+/*
+@gray-dark {
+    background-color:#454545;
+}
+
 .wrap {
     background: #FFffFF;
     margin: 0 auto;
-    width: 1100px; 
+    width: 500px; 
 }
 
-.tableInfo {
+.userName {
+    font-size: 20px;
+}
+
+.userInfoName {
+    font-size: 25px;
+    text-align: center;
+}
+
+.userInfo {
     border-collapse: separate;
     border-spacing: 5px;  
-    background: #ddd; 
-    width: 500px;
-    display: inline-block;
+    background: #F8F8F8; 
+    /*width: 500px;*/
+/*    display: inline-block;
     margin-left: 5px;
+}*/
+
+/*.infoText {
+    display:inline-block;
 }
+
+.infoBtn {
+    display:inline-block;
+}
+*/
+
+/*
 
 td {
     border: 1px solid lightgray;
     padding: 5px;
 }
 
+*/

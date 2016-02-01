@@ -1,40 +1,127 @@
-<table class="tableInfo" ng-repeat="el in jsonData">
+
+<div class="wrapper">
+  <div class="row">
+    <div class="col-sm-6 col-md-4 ">
+      <div class="thumbnail">
+        <div class="caption" >
+          <h3>{{user.name}}</h3>
+              <ul >  
+                  <li><strong> username: </strong> {{user.username}} </li>
+                  <li><strong> email: </strong>  {{user.email}} </li>
+                  <li><strong> address: </strong>  </li>
+                  <li><strong> street: </strong>  {{user.address.street}} </li>
+                  <li><strong> suite: </strong> {{user.address.suite}} </li>
+                  <li><strong> city: </strong>  {{user.address.city}} </li>
+                  <li><strong> zipcode: </strong> {{user.address.zipcode}} </li>
+                  <li><strong> lat: </strong>  {{user.address.geo.lat}} </li>
+                  <li><strong> lng: </strong> {{user.address.geo.lat}} </li>
+                  <li><strong> phone: </strong>  {{user.phone}} </li>
+                  <li><strong> website: </strong> {{user.website}} </li>
+                  <li><strong> company: </strong>  </li>
+                  <li><strong> Name: </strong>  {{user.company.name}} </li>
+                  <li><strong> catchPhrase: </strong>  {{user.company.catchPhrase}} </li>
+                  <li><strong> bs: </strong>  {{user.company.bs}} </li>
+              </ul>
+          <p>
+            <a href="#" class="btn btn-default" ui-sref="post({id: user.id})" role="button">post</a>
+            <a href="#" class="btn btn-default" ui-sref="album({id: user.id})" role="button">albums</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+
+      <div class="caption">
+        <h3>User: {{el.id}}</h3>
+        <p>
+          <a href="#" class="btn btn-primary" role="button">назад</a> <a href="#" class="btn btn-default" role="button">post</a><a href="#" class="btn btn-default" role="button">albums</a></p>
+        <p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- 
+<div class="wrap"> 
+    <div class="userInfo" ng-repeat="el in jsonData">
+    <strong class="userInfoName"> User: {{el.id}} </strong>
+        <div class="row">  
+            <ul class="infoText col-md-8">  
+                <li><strong> name: </strong>  <span class="userName"> {{el.name}} </span> </li>
+                <li><strong> username: </strong> <span class="userName"> {{el.username}} </span></li>
+                <li><strong> email: </strong>  <span class="userName"> {{el.email}} </span></li>
+            </ul>
+            <ul class="infoBtn col-md-1">  
+                <li><input class="btn btn_allInfoUsers" ui-sref="user({id: el.id})" type="button" value="назад"></li>
+                <li><input type="button" class="btn" ui-sref="post({id: el.id})" value="Посты"></li>
+                <li><input type="button" class="btn" ui-sref="album({id: el.id})" value="albums"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<table class="tableInfo">
   <thead>
     <tr>
-       <th>User: {{el.id}}</th>
-       <th></th>
-       <th></th>
+       <th>User: {{user.id}}</th>
+       <th><input type="button" class="btn" ui-sref="user" value="    Prev    "></th>
+       <th><input type="button" class="btn" ui-sref="post" value="запрос post"></th>
+       <th><input type="button" class="btn" ui-sref="album" value="запрос albums"></th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-       <td>name:</td>
-       <td>{{el.name}}</td>
-        <td rowspan="2"><input class="btn btn_allInfoUsers" ng-click="allInfoUsers($event, el.id)" ui-sref="users" type="button" value="Подробнее"></td>
+        <td rowspan="6">address:</td>
+		<td>street:</td>
+	    <td colspan="2">{{user.address.street}}</td>
     </tr>
     <tr>
-       <td>username:</td>
-       <td>{{el.username}}</td>
-
+    	<td>suite:</td>
+	   <td colspan="2">{{user.address.suite}}</td>
+    </tr>
+    <tr >
+    	<td>city:</td>
+	    <td colspan="2">{{user.address.city}}</td>
     </tr>
     <tr>
-       <td>email:</td>
-       <td>{{el.email}}</td>
-	     <td rowspan="2"><input type="button" class="btn" ui-sref="post" ng-click="posts($event, el.id)" value="запрос post"></td>
+    	<td >zipcode:</td>
+	    <td colspan="2">{{user.address.zipcode}}</td>
+    </tr>
+    <tr>
+    	<td rowspan="2">geo:</td>
+    	<td>lat:</td>
+	   <td>{{user.address.geo.lat}}</td>
+    </tr>
+    <tr>
+		<td>lng:<span></td>
+	    <td>{{user.address.geo.lng}}</td>
     </tr>
     <tr>
        <td>phone:</td>
-       <td>{{el.phone}}</td>
-
+       <td colspan="3">{{user.phone}}</td>
     </tr>
     <tr>
        <td>website:</td>
-       <td>{{el.website}}</td>
-       <td rowspan="2"><input type="button" class="btn" ui-sref="album" value="запрос albums"></td>
+       <td colspan="3">{{user.website}}</td>
     </tr>
     <tr>
-       <td>company Name:</td>
-       <td>{{el.company.name}}</td>
+       <td rowspan="3">company:</td>
+       <td>Name:</td>
+       <td colspan="2">{{user.company.name}}</td>
     </tr>
+    <tr>
+    	<td>catchPhrase:</td>
+        <td colspan="2"> {{user.company.catchPhrase}}</td>
+    </tr>
+    <tr>
+        <td>bs:</td>
+        <td colspan="2">{{user.company.bs}}</td>
+    </tr>
+
   </tbody>
 </table>
+ -->
