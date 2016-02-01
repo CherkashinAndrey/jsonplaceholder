@@ -45,6 +45,9 @@ font-size: 12px;
     width: 1000px; 
 }
 
+.photosHeight {
+    height: 300px;
+}
 /*
 @gray-dark {
     background-color:#454545;
