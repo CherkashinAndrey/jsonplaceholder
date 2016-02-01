@@ -12,7 +12,7 @@
 
   function routes ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/users');
-
+    
     $stateProvider
 
       .state('users', {
@@ -20,7 +20,8 @@
         templateUrl: 'templates/users.html',
         url: '/users',
         resolve: {
-          data: ['appServices', function(appServices) {
+          data: ['$stateParams','appServices', function($stateParams, appServices) {
+
             return appServices.getUsers()  
           }]
         }
@@ -32,6 +33,7 @@
         templateUrl: 'templates/user.html',
         resolve: {
           data: ['$stateParams', 'appServices', function($stateParams, appServices) {
+            debugger
             return appServices.getUsers($stateParams.id);
           }]
         }
