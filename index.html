@@ -18,13 +18,14 @@
 
 
 <body>
-	<div ng-controller="loaderCtrl">
+	<!-- <div ng-controller="loaderCtrl">
 		<loading></loading>
-	</div>
+	</div> -->
+	<loading></loading>
 	<div ui-view></div>
 </body>
 <script src="app.js"></script>
-<script src="controllers/appCtrl.js"></script>
+<script src="controllers/userCtrl.js"></script>
 <script src="controllers/usersCtrl.js"></script>
 <script src="controllers/postsCtrl.js"></script>
 <script src="controllers/singlePostCtrl.js"></script>
@@ -32,8 +33,11 @@
 <script src="controllers/photosCtrl.js"></script>
 <script src="controllers/commentsCtrl.js"></script>
 <script src="service/appServices.js"></script>
-<script src="controllers/loaderCtrl.js"></script>
+
+<script src="service/loadingService.js"></script>
+
 <script src="directive/loading.js"></script>
+
 <script type='text/javascript' src='build/js/loading-bar.min.js'></script>
 <!-- <script type="text/javascript" src="http://fgnass.github.io/spin.js/spin.min.js"></script>
 <script type="text/javascript" src="angular-spinner.min.js"></script>

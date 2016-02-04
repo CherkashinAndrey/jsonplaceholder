@@ -1,4 +1,7 @@
 <div class="wrapper">
+
+  <!-- <loading></loading> -->
+
 <!-- <span us-spinner="{radius:30, width:8, length: 16}"></span> -->
 
 <!-- <div class="loader" ng-show="loader">
@@ -18,7 +21,7 @@
               <li><strong> email: </strong>   {{user.email}}</li>
           </ul>
           <p>
-            <a href="#" class="btn btn-primary" ui-sref="user({id: user.id})" role="button">подробно</a> 
+            <a href="#" class="btn btn-primary" ui-sref="user({id: user.id})" role="button">подробно</a>
             <a href="#" class="btn btn-default" ui-sref="allUserPosts({id: user.id})" role="button">post</a>
             <a href="#" class="btn btn-default" ui-sref="album({id: user.id})" role="button">albums</a>
           </p>
@@ -29,16 +32,16 @@
   </div>
 </div>
 
-<!-- <div class="wrap"> 
+<!-- <div class="wrap">
     <div class="userInfo" ng-repeat="el in jsonData">
     <strong class="userInfoName"> User: {{el.id}} </strong>
-        <div class="row">  
-            <ul class="infoText col-md-8">  
+        <div class="row">
+            <ul class="infoText col-md-8">
                 <li><strong> name: </strong>  <span class="userName"> {{el.name}} </span> </li>
                 <li><strong> username: </strong> <span class="userName"> {{el.username}} </span></li>
                 <li><strong> email: </strong>  <span class="userName"> {{el.email}} </span></li>
             </ul>
-            <ul class="infoBtn col-md-1">  
+            <ul class="infoBtn col-md-1">
                 <li><input class="btn btn_allInfoUsers" ui-sref="user({id: el.id})" type="button" value="Подробнее"></li>
                 <li><input type="button" class="btn" ui-sref="post({id: el.id})" value="Посты"></li>
                 <li><input type="button" class="btn" ui-sref="album({id: el.id})" value="запрос albums"></li>
@@ -47,7 +50,7 @@
     </div>
 </div> -->
 
-<!-- 
+<!--
 <table class="tableInfo" ng-repeat="el in jsonData">
   <thead>
     <tr>

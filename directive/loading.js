@@ -1,16 +1,22 @@
 
 (function(){
-    angular.module('app')
-        .directive('loading', function (){
+    angular
+      .module('app')
+      .directive('loading', function ($rootScope, loadingService) {
         return {
           restrict: 'E',
           scope: true,
-          template: "<div ng-show={{load}}> loading . . . </div>",
-          link: function (scope, elmement, attrs) {
-               // scope.load = 'load...';
-            }
+          template: "<div class='loader-content' ng-show='load'> <img class='loader' src='gif/loader.gif'></img> </div>",
+          link: function ($scope) {
+            loadingService.connectLoader(function (loading) {
+              $scope.load = loading;
+            });
+
+          }
         };
-    });
+
+      });
+
 })()
 
 

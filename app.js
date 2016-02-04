@@ -4,25 +4,25 @@
   angular
     .module('app', ['ui.router','cfp.loadingBar'] )
     .config(routes)
-    .config(config)
+    .run(run)
 
 
-  function config ($locationProvider) {
-    // interceptor
+  function run ($rootScope, $state, loadingService) {
+    loadingService.initLoading();
   }
 
   function routes ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/users');
-    
+
     $stateProvider
 
       .state('users', {
-        controller: 'appCtrl',
+        controller: 'userCtrl',
         templateUrl: 'templates/users.html',
         url: '/users',
         resolve: {
           data: ['$stateParams','appServices', function($stateParams, appServices) {
-            return appServices.getUsers(); 
+            return appServices.getUsers();
           }]
         }
       })
