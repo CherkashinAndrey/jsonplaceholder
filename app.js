@@ -1,10 +1,11 @@
 
-(function () {
+// (function () {
 
   angular
-    .module('app', ['ui.router'])
+    .module('app', ['ui.router','cfp.loadingBar'] )
     .config(routes)
     .config(config)
+
 
   function config ($locationProvider) {
     // interceptor
@@ -21,8 +22,7 @@
         url: '/users',
         resolve: {
           data: ['$stateParams','appServices', function($stateParams, appServices) {
-
-            return appServices.getUsers()  
+            return appServices.getUsers(); 
           }]
         }
       })
@@ -33,7 +33,7 @@
         templateUrl: 'templates/user.html',
         resolve: {
           data: ['$stateParams', 'appServices', function($stateParams, appServices) {
-            debugger
+
             return appServices.getUsers($stateParams.id);
           }]
         }
@@ -160,4 +160,4 @@
 
   }
 
-})()
+// })()

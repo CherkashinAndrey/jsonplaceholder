@@ -3,21 +3,13 @@
 
   angular
     .module('app')
-    .controller('appCtrl', appCtrl);
+    .controller('appCtrl', appCtrl)
+
 
   function appCtrl($scope, data) {
     $scope.users = data.data;
-    $scope.loader = true;
+    $scope.loader = false;
     console.log('all users ', data);
-
-  	// url = {
-  	// 	url: "http://jsonplaceholder.typicode.com/users",
-  	// 	id: "1",
-  	// }
-
-	// $scope.allInfoUsers = function(id) {
-	// 	//вызвать сервис
-	// }
 
   }
 
