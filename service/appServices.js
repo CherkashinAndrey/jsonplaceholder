@@ -6,11 +6,9 @@
     .service('appServices', appServices)
     .constant('URL', 'http://jsonplaceholder.typicode.com/');
 
-  function appServices($http, URL, cfpLoadingBar) {
+  function appServices($http, URL) {
     return {
       getUsers: function(id) {
-       // cfpLoadingBar.start();
-      // loaderCtrl.start();
         return $http({
           method: 'GET',
           url: URL + 'users',
@@ -19,7 +17,6 @@
           }
         }).then(
           function (result) {
-            //cfpLoadingBar.complete()
             return result;
           },
           function (error) {
@@ -29,7 +26,6 @@
       },
 
       getPosts: function(config) {
-      //  cfpLoadingBar.start();
         return $http({
           method: 'GET',
           url: URL + 'posts',
@@ -37,7 +33,6 @@
         })
         .then(
           function (result) {
-         //   cfpLoadingBar.complete()
             return result;
           },
           function (error) {
@@ -47,7 +42,6 @@
       },
 
       getComments: function(id) {
-      //  cfpLoadingBar.start();
         return $http({
           method: 'GET',
           url: URL + 'comments',
@@ -56,7 +50,6 @@
           }
         }).then(
           function (result) {
-        //    cfpLoadingBar.complete()
             return result;
           },
           function (error) {
@@ -66,7 +59,6 @@
       },
 
       getAlbums: function(id) {
-      //  cfpLoadingBar.start();
         console.log("getAlbums", id );
         return $http({
           method: 'GET',
@@ -76,7 +68,6 @@
           }
         }).then(
           function (result) {
-        //    cfpLoadingBar.complete()
             console.log('getAlbums', result)
             return result;
           },
@@ -87,7 +78,6 @@
       },
 
       getPhotos: function(id) {
-     //   cfpLoadingBar.start();
         console.log("getPhotos", id );
         return $http({
           method: 'GET',
@@ -97,7 +87,6 @@
           }
         }).then(
           function (result) {
-        //    cfpLoadingBar.complete()
             console.log('getPhotos', result)
             return result;
           },

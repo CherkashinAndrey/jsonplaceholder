@@ -5,22 +5,21 @@
 <link rel="stylesheet" href="css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
-<link rel='stylesheet' href='build/css/loading-bar.min.css' type='text/css' media='all' />
 
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<!-- Optional theme -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 </head>
 
-
 <body>
-	<!-- <div ng-controller="loaderCtrl">
-		<loading></loading>
-	</div> -->
+<nav class="wrapper navbar navbar-default">
+  <ul class="nav navbar-nav">
+    <li><a ui-sref="home()">Home</a></li>
+    <li><a ui-sref="allPosts()">All Posts</a></li>
+    <li><a ui-sref="allPhotos()">All Photos</a></li>
+    <li><a ui-sref="testGetPhotos()">test(GetPhotos)</a></li>
+    <li><a ui-sref="POSTRequest()">POST(Request)</a></li>
+  </ul>
+</nav>
 	<loading></loading>
 	<div ui-view></div>
 </body>
@@ -31,15 +30,22 @@
 <script src="controllers/singlePostCtrl.js"></script>
 <script src="controllers/albumCtrl.js"></script>
 <script src="controllers/photosCtrl.js"></script>
+<script src="controllers/allPhotosCtrl.js"></script>
 <script src="controllers/commentsCtrl.js"></script>
-<script src="service/appServices.js"></script>
+<script src="controllers/testGetPhotosCtrl.js"></script>
+<script src="controllers/POSTRequestCtrl.js"></script>
+
+<script src="service/usersServices.js"></script>
+<script src="service/postsServices.js"></script>
+<script src="service/albumsServices.js"></script>
+<script src="service/photosServices.js"></script>
+<script src="service/allPhotosServices.js"></script>
+<script src="service/commentsServices.js"></script>
+<script src="service/testGetPhotosServices.js"></script>
+<script src="service/POSTRequestServices.js"></script>
 
 <script src="service/loadingService.js"></script>
 
 <script src="directive/loading.js"></script>
 
-<script type='text/javascript' src='build/js/loading-bar.min.js'></script>
-<!-- <script type="text/javascript" src="http://fgnass.github.io/spin.js/spin.min.js"></script>
-<script type="text/javascript" src="angular-spinner.min.js"></script>
-<script type="text/javascript" src="directive/loading.js"></script> -->
 </html>

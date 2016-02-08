@@ -6,13 +6,13 @@
           <h3><strong>{{userName}}</strong></h3>
         </div>
       </div>
-     <ul ng-repeat="el in jsonData">
+     <ul ng-repeat="album in albums">
         <li>
         <div class="thumbnail">
           <div class="caption" >
-            <h5>{{el.title}}</h5>
+            <h5>{{album.title}}</h5>
             <p>
-              <a href="#" class="btn btn-primary" ui-sref="photos({id: el.id})" role="button">Photos☺</a>
+              <a href="#" class="btn btn-primary" ui-sref="photos({id: album.id})" role="button">Photos☺</a>
             </p>
           </div>
         </div>
@@ -22,46 +22,3 @@
     </div>
   </div>
 </div>
-
-<!-- <div class="wrapper" >
-<div>
-  <h3>name :{{userName}}</h3>
-</div>
-  <div class="row" ng-repeat="el in jsonData">
-    <div class="col-sm-6 col-md-12 " >
-      <div class="thumbnail">
-        <div class="caption" >
-              <ul >  
-                  <li><strong> title: </strong> {{el.title}} </li>
-              </ul>
-          <p>
-            <a href="#" class="btn btn-primary" ui-sref="photos({id: el.id})" role="button">Photos☺</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- 
-<table class="tableInfo" ng-repeat="el in jsonData">
-  <thead>
-    <tr>
-       <th>User: {{el.userId}}</th>
-       <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-       <td>id:</td>
-       <td>{{el.id}}</td>
-    </tr>
-    <tr>
-       <td>title:</td>
-       <td>{{el.title}}</td>
-    </tr>
-    <tr>
-       <td><a class='get_photo' ui-sref="photos({id: el.id})" href='#'>Photos☺</a></td>
-       <td></td>
-    </tr>
-  </tbody>
-</table> -->

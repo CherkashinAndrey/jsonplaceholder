@@ -16,7 +16,6 @@
       initLoading: function () {
         var that = this;
         $rootScope.$on('$stateChangeStart', function() {
-          console.log('stateChangeStart')
           that.isLoading = true;
 
           if (that.loaderCb.length) {
@@ -24,11 +23,9 @@
               fn(that.isLoading);
             })
           }
-
         });
 
         $rootScope.$on('$stateChangeSuccess', function() {
-          console.log('stateChangeSuccess');
           that.isLoading = false;
 
           if (that.loaderCb.length) {

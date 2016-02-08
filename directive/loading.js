@@ -6,7 +6,7 @@
         return {
           restrict: 'E',
           scope: true,
-          template: "<div class='loader-content' ng-show='load'> <img class='loader' src='gif/loader.gif'></img> </div>",
+          template: "<div class='loader' ng-show='load'> <div class='loader-content' > </div></div>",
           link: function ($scope) {
             loadingService.connectLoader(function (loading) {
               $scope.load = loading;

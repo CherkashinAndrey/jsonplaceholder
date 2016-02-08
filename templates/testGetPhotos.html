@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="row " >
+    <div class="col-sm-10 col-md-4 photosHeight"  ng-repeat="photo in photos"  >
+      <div class="thumbnail">
+      <img src="{{photo.thumbnailUrl}}" alt="">
+        <div class="caption" >
+            <ul >  
+                <li><strong> title: </strong> {{photo.title}} </li>
+                <li><strong> img(600x600): </strong>  <a href="{{photo.url}}">{{photo.url}}</a> </span></li>
+            </ul>        
+        </div>
+      </div>
+    </div>
+  </div>
+  <p>
+    <a href="#" class="btn btn-primary" ng-click="getData($event)" role="button">
+              Подгрузить еще
+            </a>
+  </p>
+</div>

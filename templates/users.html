@@ -1,16 +1,4 @@
 <div class="wrapper">
-
-  <!-- <loading></loading> -->
-
-<!-- <span us-spinner="{radius:30, width:8, length: 16}"></span> -->
-
-<!-- <div class="loader" ng-show="loader">
-  <div class="loader-content">Loading...</div>
-</div> -->
-  <ul>
-    <li><a ui-sref="allPosts()">All Posts</a></li>
-  </ul>
-
   <div class="row">
     <div class="col-sm-6 col-md-4 " ng-repeat="user in users">
       <div class="thumbnail">
@@ -31,63 +19,3 @@
     </div>
   </div>
 </div>
-
-<!-- <div class="wrap">
-    <div class="userInfo" ng-repeat="el in jsonData">
-    <strong class="userInfoName"> User: {{el.id}} </strong>
-        <div class="row">
-            <ul class="infoText col-md-8">
-                <li><strong> name: </strong>  <span class="userName"> {{el.name}} </span> </li>
-                <li><strong> username: </strong> <span class="userName"> {{el.username}} </span></li>
-                <li><strong> email: </strong>  <span class="userName"> {{el.email}} </span></li>
-            </ul>
-            <ul class="infoBtn col-md-1">
-                <li><input class="btn btn_allInfoUsers" ui-sref="user({id: el.id})" type="button" value="Подробнее"></li>
-                <li><input type="button" class="btn" ui-sref="post({id: el.id})" value="Посты"></li>
-                <li><input type="button" class="btn" ui-sref="album({id: el.id})" value="запрос albums"></li>
-            </ul>
-        </div>
-    </div>
-</div> -->
-
-<!--
-<table class="tableInfo" ng-repeat="el in jsonData">
-  <thead>
-    <tr>
-       <th>User: {{el.id}}</th>
-       <th></th>
-       <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-       <td>name:</td>
-       <td>{{el.name}}</td>
-       <td rowspan="2"><input class="btn btn_allInfoUsers" ui-sref="user({id: el.id})" type="button" value="Подробнее"></td>
-    </tr>
-    <tr>
-       <td>username:</td>
-       <td>{{el.username}}</td>
-
-    </tr>
-    <tr>
-       <td>email:</td>
-       <td>{{el.email}}</td>
-	     <td rowspan="2"><input type="button" class="btn" ui-sref="post({id: el.id})" value="запрос post"></td>
-    </tr>
-    <tr>
-       <td>phone:</td>
-       <td>{{el.phone}}</td>
-
-    </tr>
-    <tr>
-       <td>website:</td>
-       <td>{{el.website}}</td>
-       <td rowspan="2"><input type="button" class="btn" ui-sref="album({id: el.id})" value="запрос albums"></td>
-    </tr>
-    <tr>
-       <td>company Name:</td>
-       <td>{{el.company.name}}</td>
-    </tr>
-  </tbody>
-</table> -->

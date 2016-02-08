@@ -6,8 +6,6 @@
 
   function photosCtrl($scope, data) {
   	$scope.photos = data.data;
-  	console.log('photosCtrl ', data);
- 
   }
 
 })();

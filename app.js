@@ -1,8 +1,8 @@
 
-// (function () {
+(function () {
 
   angular
-    .module('app', ['ui.router','cfp.loadingBar'] )
+    .module('app', ['ui.router'] )
     .config(routes)
     .run(run)
 
@@ -16,13 +16,24 @@
 
     $stateProvider
 
+      .state('home', {
+        controller: 'userCtrl',
+        templateUrl: 'templates/users.html',
+        url: '/users',
+        resolve: {
+          data: ['$stateParams','usersServices', function($stateParams, usersServices) {
+            return usersServices.getUsers();
+          }]
+        }
+      })
+
       .state('users', {
         controller: 'userCtrl',
         templateUrl: 'templates/users.html',
         url: '/users',
         resolve: {
-          data: ['$stateParams','appServices', function($stateParams, appServices) {
-            return appServices.getUsers();
+          data: ['$stateParams','usersServices', function($stateParams, usersServices) {
+            return usersServices.getUsers();
           }]
         }
       })
@@ -32,21 +43,20 @@
         controller: 'usersCtrl',
         templateUrl: 'templates/user.html',
         resolve: {
-          data: ['$stateParams', 'appServices', function($stateParams, appServices) {
+          data: ['$stateParams', 'usersServices', function($stateParams, usersServices) {
 
-            return appServices.getUsers($stateParams.id);
+            return usersServices.getUsers($stateParams.id);
           }]
         }
       })
 
-      //
       .state('allPosts', {
         controller: 'postsCtrl',
         templateUrl: 'templates/posts.html',
         url: '/posts',
         resolve: {
-          data: ['$stateParams', 'appServices', function($stateParams, appServices) {
-            return appServices.getPosts();
+          data: ['$stateParams', 'postServices', function($stateParams, postServices) {
+            return postServices.getPosts();
           }]
         }
       })
@@ -56,8 +66,8 @@
         templateUrl: 'templates/posts.html',
         url: '/posts/userid=:id',
         resolve: {
-          data: ['$stateParams', 'appServices', function($stateParams, appServices) {
-            return appServices.getPosts({userId: $stateParams.id});
+          data: ['$stateParams', 'postServices', function($stateParams, postServices) {
+            return postServices.getPosts({userId: $stateParams.id});
           }]
         }
       })
@@ -67,14 +77,13 @@
         templateUrl: 'templates/post.html',
         url: '/posts/:id',
         resolve: {
-          data: ['$stateParams', 'appServices', function($stateParams, appServices) {
-            return appServices.getPosts({id: $stateParams.id}).then(
+          data: ['$stateParams', 'postServices','usersServices', function($stateParams, postServices,usersServices) {
+            return postServices.getPosts({id: $stateParams.id}).then(
               function (result) {
                 var post = result;
-                return appServices.getUsers($stateParams.id).then(
+                return usersServices.getUsers($stateParams.id).then(
                   function (result) {
                     post['comments'] = result;
-                    console.log('post');
                     return post;
                   },
                   function (error) {
@@ -90,30 +99,16 @@
         }
       })
 
-      // .state('post', {
-      //   controller: 'postCtrl',
-      //   templateUrl: 'templates/post.html',
-      //   url: '/posts/userid=:id',
-      //   resolve: {
-      //     data: ['$stateParams', 'appServices', function($stateParams, appServices) {
-      //       return appServices.getPosts($stateParams.id);
-      //     }]
-      //   }
-      // })
-
-
-
-      //
       .state('album', {
           controller: 'albumCtrl',
           templateUrl: 'templates/album.html',
           url: '/albums/userId=:id',
           resolve: {
-            data: ['$stateParams', 'appServices', function($stateParams, appServices) {
-              return appServices.getAlbums($stateParams.id).then(
+            data: ['$stateParams', 'albumsServices' ,'usersServices', function($stateParams, albumsServices, usersServices) {
+              return albumsServices.getAlbums($stateParams.id).then(
               function (result) {
                 var user = result;
-                return appServices.getUsers($stateParams.id).then(
+                return usersServices.getUsers($stateParams.id).then(
                   function (result) {
                     user['user'] = result;
                     return user;
@@ -130,34 +125,63 @@
             }]
           }
       })
-      //
+
       .state('photos', {
           controller: 'photosCtrl',
           templateUrl: 'templates/photos.html',
           url: '/album/photos/id=:id',
           resolve: {
-            data: ['$stateParams', 'appServices', function($stateParams, appServices) {
-              return appServices.getPhotos($stateParams.id);
+            data: ['$stateParams', 'photosServices', function($stateParams, photosServices) {
+              return photosServices.getPhotos($stateParams.id);
             }]
           }
 
         })
-      //
+
+      .state('allPhotos', {
+          controller: 'allPhotosCtrl',
+          templateUrl: 'templates/allPhotos.html',
+          url: '/photos/',
+          resolve: {
+            data: ['$stateParams', 'allPhotosServices', function($stateParams, allPhotosServices) {
+              return allPhotosServices.getPhotos();
+            }]
+          }
+      })
+
+      .state('testGetPhotos', {
+          controller: 'testGetPhotosCtrl',
+          templateUrl: 'templates/testGetPhotos.html',
+          url: '/photosGet/',
+          resolve: {
+            data: ['$stateParams', 'testGetPhotosServices', function($stateParams, testGetPhotosServices) {
+              return testGetPhotosServices.getPhotos(1);
+            }]
+          }
+      })
+
+      .state('POSTRequest', {
+          controller: 'POSTRequestCtrl',
+          templateUrl: 'templates/POSTRequest.html',
+          url: '/POSTRequest/',
+          resolve: {
+            data: ['$stateParams', 'POSTRequestServices', function($stateParams, POSTRequestServices) {
+              return POSTRequestServices.GetRequest();
+            }]
+          }
+      })
+
       .state('comments', {
           controller: 'commentsCtrl',
           templateUrl: 'templates/comments.html',
           url: '/comments/userId=:id',
           resolve: {
-            data: ['$stateParams', 'appServices', function($stateParams, appServices) {
-              console.log("$stateParams : ",$stateParams)
-              return appServices.getComments($stateParams.id);
+            data: ['$stateParams', 'commentsServices', function($stateParams, commentsServices) {
+              return commentsServices.getComments($stateParams.id);
             }]
           }
         })
 
-
-
-
   }
 
-// })()
+})()

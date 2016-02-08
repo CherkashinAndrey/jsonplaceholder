@@ -6,8 +6,6 @@
 
   function commentsCtrl($scope, data) {
   	$scope.comments = data.data;
-  	//$scope.postTitle = data.postTitle;
-  	console.log('commentsCtrl ', data);
   }
   
 })();
