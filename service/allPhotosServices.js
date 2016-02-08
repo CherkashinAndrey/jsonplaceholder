@@ -1,28 +1,24 @@
+  (function() {
 
-(function() {
-
-  angular
+    angular
     .module('app')
     .service('allPhotosServices', allPhotosServices)
-    .constant('URL', 'http://jsonplaceholder.typicode.com/');
+    .constant('URL_PHOTOS', 'http://jsonplaceholder.typicode.com/photos');
 
-  function allPhotosServices($http, URL) {
-    return {
+    function allPhotosServices($http, URL_PHOTOS) {
+      return {
        getPhotos: function(id) {
         return $http({
           method: 'GET',
-          url: 'http://jsonplaceholder.typicode.com/photos/'
-          // params: {
-          //   id : id
-          // }
+          url: URL_PHOTOS,
         }).then(
-          function (result) {
-            console.log('serv',result);
-            return result;
-          },
-          function (error) {
-            console.log(error);
-          }
+        function (result) {
+          console.log('serv',result);
+          return result;
+        },
+        function (error) {
+          console.log(error);
+        }
         );
       }
     }

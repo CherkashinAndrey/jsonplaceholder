@@ -1,9 +1,9 @@
 (function() {
 
   angular
-    .module('app')
-    .service('POSTRequestServices', POSTRequestServices)
-    .constant('ROOT', 'http://localhost:3001/');
+  .module('app')
+  .service('POSTRequestServices', POSTRequestServices)
+  .constant('ROOT', 'http://localhost:3001/');
 
   function POSTRequestServices($http, ROOT) {
     return {
@@ -12,28 +12,28 @@
           method: 'GET',
           url: ROOT + 'books'
         }).then(
-          function (result) {
-            return result;
-          },
-          function (error) {
-            console.log(error);
-          }
+        function (result) {
+          return result;
+        },
+        function (error) {
+          console.log(error);
+        }
         );
       },
 
       PostRequest: function(book, scope) {
         return $http.post('http://localhost:3001/books',book)
-       .then(function (result) {
+        .then(function (result) {
           scope.books.push(book);
           scope.book = null;
-       }),
-         function (result) {
+        }),
+        function (result) {
          console.log('error in book POST');
        }
-      }
+     }
 
 
-    }
-  }
+   }
+ }
 
 })();

@@ -1,25 +1,25 @@
 <!doctype html>
 <html ng-app="app">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="css/style.css">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 </head>
 
 <body>
-<nav class="wrapper navbar navbar-default">
-  <ul class="nav navbar-nav">
-    <li><a ui-sref="home()">Home</a></li>
-    <li><a ui-sref="allPosts()">All Posts</a></li>
-    <li><a ui-sref="allPhotos()">All Photos</a></li>
-    <li><a ui-sref="testGetPhotos()">test(GetPhotos)</a></li>
-    <li><a ui-sref="POSTRequest()">POST(Request)</a></li>
-  </ul>
-</nav>
+	<nav class="wrapper navbar navbar-default">
+		<ul class="nav navbar-nav">
+			<li><a ui-sref="home()">Home</a></li>
+			<li><a ui-sref="allPosts()">All Posts</a></li>
+			<li><a ui-sref="allPhotos()">All Photos</a></li>
+			<li><a ui-sref="testGetPhotos()">test(GetPhotos)</a></li>
+			<li><a ui-sref="POSTRequest()">POST(Request)</a></li>
+		</ul>
+	</nav>
 	<loading></loading>
 	<div ui-view></div>
 </body>

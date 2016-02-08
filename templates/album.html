@@ -6,19 +6,18 @@
           <h3><strong>{{userName}}</strong></h3>
         </div>
       </div>
-     <ul ng-repeat="album in albums">
+      <ul ng-repeat="album in albums">
         <li>
-        <div class="thumbnail">
-          <div class="caption" >
-            <h5>{{album.title}}</h5>
-            <p>
-              <a href="#" class="btn btn-primary" ui-sref="photos({id: album.id})" role="button">Photos☺</a>
-            </p>
+          <div class="thumbnail">
+            <div class="caption" >
+              <h5>{{album.title}}</h5>
+              <p>
+                <a href="#" class="btn btn-primary" ui-sref="photos({id: album.id})" role="button">Photos☺</a>
+              </p>
+            </div>
           </div>
-        </div>
         </li>
       </ul>
-
     </div>
   </div>
 </div>

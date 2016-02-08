@@ -1,17 +1,15 @@
-
 (function() {
 
   angular
     .module('app')
     .service('photosServices', photosServices)
-    .constant('URL', 'http://jsonplaceholder.typicode.com/');
-
-  function photosServices($http, URL) {
+    
+  function photosServices($http, URL_PHOTOS) {
     return {
        getPhotos: function(id) {
         return $http({
           method: 'GET',
-          url: URL + 'photos',
+          url: URL_PHOTOS,
           params: {
             albumId: id
           }

@@ -1,11 +1,11 @@
 (function() {
 
-  angular
-    .module('app')
-    .controller('photosCtrl', photosCtrl);
+	angular
+	.module('app')
+	.controller('photosCtrl', photosCtrl);
 
-  function photosCtrl($scope, data) {
-  	$scope.photos = data.data;
-  }
+	function photosCtrl($scope, data) {
+		$scope.photos = data.data;
+	}
 
 })();

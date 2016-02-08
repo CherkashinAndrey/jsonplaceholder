@@ -1,13 +1,12 @@
-
 (function() {
 
-  angular
-    .module('app')
-    .controller('singlePostCtrl', singlePostCtrl);
+	angular
+	.module('app')
+	.controller('singlePostCtrl', singlePostCtrl);
 
-  function singlePostCtrl($scope, data) {
-  	$scope.post = data.data[0];
-  	$scope.comments = data.comments.data;
-  }
+	function singlePostCtrl($scope, data) {
+		$scope.post = data.data[0];
+		$scope.comments = data.comments.data;
+	}
 
 })();

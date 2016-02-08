@@ -1,12 +1,11 @@
-
 (function() {
 
-  angular
-    .module('app')
-    .controller('usersCtrl', usersCtrl);
+	angular
+	.module('app')
+	.controller('usersCtrl', usersCtrl);
 
-  function usersCtrl($scope, data) {
-    $scope.user = data.data[0];
-  }
+	function usersCtrl($scope, data) {
+		$scope.user = data.data[0];
+	}
 
 })();
