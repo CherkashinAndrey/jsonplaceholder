@@ -2,29 +2,28 @@
 
   angular
   .module('app')
-  .service('postServices', postServices)
-  .constant('URL_POSTS', 'http://jsonplaceholder.typicode.com/posts');
+  .service('POSTPostsServices', POSTPostsServices)
+  .constant('ROOT', 'http://jsonplaceholder.typicode.com/posts');
 
-  function postServices($http, URL_POSTS) {
+  function POSTPostsServices($http, ROOT) {
     return {
-     getPosts: function(config) {
-      return $http({
-        method: 'GET',
-        url: URL_POSTS,
-        params: config
-      })
-      .then(
+      GetRequest: function() {
+        return $http({
+          method: 'GET',
+          url: ROOT
+        }).then(
         function (result) {
+          console.log('PostsReq',result);
           return result;
         },
         function (error) {
           console.log(error);
         }
-        )
-    },
+        );
+      },
 
-    PostRequest: function(post, scope) {
-        return $.ajax(URL_POSTS, {
+      PostRequest: function(post, scope) {
+        return $.ajax('http://jsonplaceholder.typicode.com/posts', {
           method: 'POST',
           data: {
             title: post.title,
@@ -37,7 +36,6 @@
           scope.post = null;
         });
      }
-  }
-}
-
+   }
+ }
 })();

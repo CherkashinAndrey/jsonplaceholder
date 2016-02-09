@@ -2,7 +2,7 @@
 (function () {
 
   angular
-  .module('app', ['ui.router'] )
+  .module('app', ['ui.router','slick'] )
   .config(routes)
   .run(run)
 
@@ -166,6 +166,17 @@
       resolve: {
         data: ['$stateParams', 'POSTRequestServices', function($stateParams, POSTRequestServices) {
           return POSTRequestServices.GetRequest();
+        }]
+      }
+    })
+
+    .state('POSTposts', {
+      controller: 'POSTPostsCtrl',
+      templateUrl: 'templates/POSTposts.html',
+      url: '/POSTPostsRequest/',
+      resolve: {
+        data: ['$stateParams', 'POSTPostsServices', function($stateParams, POSTPostsServices) {
+          return POSTPostsServices.GetRequest();
         }]
       }
     })

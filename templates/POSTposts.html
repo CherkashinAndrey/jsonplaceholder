@@ -1,0 +1,13 @@
+<div class="wrapper">
+  
+  title: <input type="text" ng-model="post.title"></br>
+  body: <input type="text" ng-model="post.body"></br>
+  <input type="button" ng-click="addpost(post)" value="add post">
+  
+  <div class="row " >
+
+    <div class="col-sm-10 col-md-4 "  ng-repeat="post in posts"  >
+     <h3>{{post.id}}</h3><h5>{{post.title}}</h3><h5>{{post.body}}</h3>
+   </div>
+ </div>
+</div>
