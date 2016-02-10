@@ -82,6 +82,10 @@ font-size: 12px;
   	100% { transform: rotate(360deg); }
 }
 
+.fl {
+  float: left;
+}
+
 
 /*
 .loader {

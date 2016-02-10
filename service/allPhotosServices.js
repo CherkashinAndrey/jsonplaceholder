@@ -13,7 +13,6 @@
           url: URL_PHOTOS,
         }).then(
         function (result) {
-          console.log('serv',result);
           return result;
         },
         function (error) {
