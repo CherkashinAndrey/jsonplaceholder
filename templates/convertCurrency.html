@@ -1,0 +1,36 @@
+<div class="wrapper">
+        <input type="text" class="currency_input" value="{{data.input}}" ng-model="data.input" ng-change="calculateCurrency()">
+
+        <select name="fromSelect" id="from" ng-model="data.fromSelected" ng-options="option for option in data.availableOptions | filter:'!'+data.toSelected" ng-change="calculateCurrency()"></select>
+
+        <select name="toSelect" id="to" ng-model="data.toSelected" ng-options="option for option in data.availableOptions | filter:'!'+data.fromSelected" ng-change="calculateCurrency()">
+        </select>
+
+        <div>
+           result: {{data.result}}
+        </div>
+
+        <table class='currency'>
+            <tr>
+            </tr>
+            <tr>
+            <td>
+                <td>Currency
+                <div ng-repeat="item in data.listCurrency">
+                    {{item}}
+                </div> 
+                </td>       
+            </td>
+                <td>Buy
+                <div ng-repeat="item in data.templateBuy">
+                    {{item}}
+                </div> 
+                </td>
+            <td>Sale
+                <div ng-repeat="item in data.templateSale">
+                    {{item}}
+                </div> 
+            </td>
+            </tr>
+        </table>
+</div>    

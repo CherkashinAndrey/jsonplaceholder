@@ -5,7 +5,7 @@
 	.controller('userCtrl', userCtrl)
 
 	function userCtrl($scope, data) {
-		$scope.users = data.data;
+		$scope.user = data.data[0];
 	}
 
 })();

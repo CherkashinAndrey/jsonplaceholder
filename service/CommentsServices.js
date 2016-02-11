@@ -5,6 +5,8 @@
   .service('commentsServices', commentsServices)
   .constant('URL_COMMENTS', 'http://jsonplaceholder.typicode.com/comments');
 
+  commentsServices.$inject = ['$http','URL_COMMENTS'];
+
   function commentsServices($http, URL_COMMENTS) {
     return {
      

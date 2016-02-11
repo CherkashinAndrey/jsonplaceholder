@@ -6,17 +6,32 @@
   .config(routes)
   .run(run)
 
-  function run ($rootScope, $state, loadingService) {
+  function run ($rootScope, $state, loadingService, allPhotosSliderServices) {
     loadingService.initLoading();
+    allPhotosSliderServices.getPhotos();
   }
 
   function routes ($stateProvider, $urlRouterProvider) {
+
+    
+
     $urlRouterProvider.otherwise('/users');
 
     $stateProvider
 
+    .state('slide', {
+      controller: 'photosSliderCtrl',
+      templateUrl: 'templates/slide.html',
+      url: '/slide',
+      resolve: {
+        data: ['$stateParams','allPhotosSliderServices', function($stateParams, allPhotosSliderServices) {
+          return allPhotosSliderServices.getPhotos(1);
+        }]
+      }
+    })
+
     .state('home', {
-      controller: 'userCtrl',
+      controller: 'usersCtrl',
       templateUrl: 'templates/users.html',
       url: '/users',
       resolve: {
@@ -27,7 +42,7 @@
     })
 
     .state('users', {
-      controller: 'userCtrl',
+      controller: 'usersCtrl',
       templateUrl: 'templates/users.html',
       url: '/users',
       resolve: {
@@ -39,7 +54,7 @@
 
     .state('user', {
       url: '/user/id=:id',
-      controller: 'usersCtrl',
+      controller: 'userCtrl',
       templateUrl: 'templates/user.html',
       resolve: {
         data: ['$stateParams', 'usersServices', function($stateParams, usersServices) {
@@ -188,6 +203,17 @@
       resolve: {
         data: ['$stateParams', 'commentsServices', function($stateParams, commentsServices) {
           return commentsServices.getComments($stateParams.id);
+        }]
+      }
+    })
+
+    .state('convertCurrency', {
+      controller: 'convertCurrencyCtrl',
+      templateUrl: 'templates/convertCurrency.html',
+      url: '/convertCurrency',
+      resolve: {
+        data: ['$stateParams','convertCurrencyServices', function($stateParams, convertCurrencyServices) {
+          return convertCurrencyServices.getConvertCurrency();
         }]
       }
     })
